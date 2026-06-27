@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Toolzology Extension 2",
+  "description": "This is an official extension for toolzology.com for accessing our tools upgraded to manifest V3, fully secure, stable, and faster than ever before.",
+  "version": "3.6",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoeP1UcrgbaSgc1tyJJZiOnQ/QAkumGLu2adr8Ajw1L8sNt+RXiXLoExpmxStzi//6LhXscT5dDedYZBbyCuP2NRA0Cq2SKTdwprUIVZR97K5p0t2Wn9Q6WsmBJxqYRYnktrfLt9q7ZXmjCz6D2dg09jyOxe2dvmemk/vysNzJ19zLuc19j6XwbnqXhYRAQ2Pv0fVfoDw4nCmsVDT/1CDdpRNjxjC5aGsciyTls6x/U5WMpBW60h1jCu29t3wHl89yOhrFh4f3XzFGk02YHmkytXdfIsfgBmQqyJpa96+iUSmbQFQYb7qwc917JLCC886rmA9/M97890HlKie/yj87wIDAQAB",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms",
+    "cookies",
+    "notifications",
+    "browsingData",
+    "unlimitedStorage",
+    "webRequest",
+    "webNavigation",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "tabs",
+    "management"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "md.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "shh.js",
+        "ab.js",
+        "sd.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
